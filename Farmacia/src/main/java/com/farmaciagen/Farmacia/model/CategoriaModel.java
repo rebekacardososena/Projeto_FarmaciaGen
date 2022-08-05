@@ -19,10 +19,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class CategoriaModel {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+	@NotBlank (message = "Categoria é obrigatório")
 	private String nomeCategoria;
 	
 	@OneToMany(mappedBy="categoria", cascade = CascadeType.ALL)
